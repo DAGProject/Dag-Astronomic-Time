@@ -178,8 +178,7 @@ class astronomic():
         try:
             moon = ephem.Moon()
             self.observat()
-            sett = ephem.localtime(self.__observatory__.previous_setting(moon))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.previous_setting(moon).datetime()
             self.etc.log("Previous moonrise in the {} will be @ '{}'".format(
                     self.obs_name(), sett))
             return(sett)
@@ -191,9 +190,9 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-12'
-            sett = ephem.localtime(self.__observatory__.next_setting(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.next_setting(
+                    sun, use_center=True).datetime()
+
             self.etc.log("Next Dusk twilight in the {} will start @ '{}'".format(
                     self.obs_name(), sett))
             return(sett)
@@ -205,9 +204,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-12'
-            sett = ephem.localtime(self.__observatory__.previous_setting(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.previous_setting(
+                    sun, use_center=True).datetime()
             self.etc.log("Previous Dusk twilight in the {} will start @ '{}'".format(
                     self.obs_name(), sett))
             return(sett)
@@ -219,9 +217,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-18'
-            sett = ephem.localtime(self.__observatory__.next_setting(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.next_setting(
+                    sun, use_center=True).datetime()
             self.etc.log("Next Dusk twilight in the {} will end @ '{}'".format(
                     self.obs_name(), sett))
             return(sett)
@@ -233,9 +230,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-18'
-            sett = ephem.localtime(self.__observatory__.previous_setting(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.previous_setting(
+                    sun, use_center=True).datetime()
             self.etc.log(
                     "Previous Dusk twilight in the {} will end @ '{}'".format(
                             self.obs_name(), sett))
@@ -248,9 +244,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-12'
-            sett = ephem.localtime(self.__observatory__.next_rising(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.next_rising(
+                    sun, use_center=True).datetime()
             self.etc.log(
                     "Next Dawn twilight in the {} will start @ '{}'".format(
                             self.obs_name(), sett))
@@ -263,9 +258,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-12'
-            sett = ephem.localtime(self.__observatory__.previous_rising(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.previous_rising(
+                    sun, use_center=True).datetime()
             self.etc.log(
                     "Previous Dawn twilight in the {} will start @ '{}'".format(
                             self.obs_name(), sett))
@@ -278,9 +272,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-18'
-            sett = ephem.localtime(self.__observatory__.next_rising(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.next_rising(
+                    sun, use_center=True).datetime()
             self.etc.log("Next Dawn twilight in the {} will end @ '{}'".format(
                     self.obs_name(), sett))
             return(sett)
@@ -292,9 +285,8 @@ class astronomic():
             sun = ephem.Sun()
             self.observat()
             self.__observatory__.horizon = '-18'
-            sett = ephem.localtime(self.__observatory__.previous_rising(
-                    sun, use_center=True))
-            sett = self.time_formatter(sett)
+            sett = self.__observatory__.previous_rising(
+                    sun, use_center=True).datetime()
             self.etc.log(
                     "Previous Dawn twilight in the {} will end @ '{}'".format(
                             self.obs_name(), sett))
