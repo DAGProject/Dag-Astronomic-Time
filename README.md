@@ -21,4 +21,4 @@ Currently a python wheel or pip installation is available for this module is und
 
 # Usage <a class="anchor" id="usage"></a>
 Please refer to:
-* ?
+* https://github.com/DAGProject/Dag-Astronomic-Time/blob/master/example.ipynb
